@@ -1,0 +1,13 @@
+{% extends "blog/base2.html" %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ object.profile.grade }}</a>
+        <small class="text-muted">{{ object.profile.rollno }}</small>
+      </div>
+      <h2 class="article-title">{{ object.profile.user.username }}</h2>
+      <p class="article-content"></p>      
+    </div>
+  </article>
+{% endblock %}

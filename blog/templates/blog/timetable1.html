@@ -1,0 +1,11 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+  <h1>Time-Table for {{ request.user.username }}</h1>
+    {% for timetable in timetables %}
+        <article class="media content-section">
+            <h2 class="article-title">{{ timetable.title }}</h2>
+            <img class="img-fluid" src="#">
+          </div>
+        </article>
+    {% endfor %}    
+{% endblock %}        

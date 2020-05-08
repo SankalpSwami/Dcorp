@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <h1>Remarks for {{ Remarks.grade }}</h1>
+    {% for remark in remarks %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ remark.author }}</a>
+              <small class="text-muted">{{ remark.date|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'remarks-detail' remark.id %}">{{ remark.title }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}

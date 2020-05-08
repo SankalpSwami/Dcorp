@@ -1,0 +1,12 @@
+{% extends "blog/base2.html" %}
+{% block content %}
+  <h1>Teachers List</h1>
+    {% for profile in profiles %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+            <h2><a class="article-title" href="{% url 'users-detail' user.id %}">Name - {{ profile.user.username }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}

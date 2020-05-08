@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <h1>Submissions for {{ Submission.grade }}</h1>
+    {% for topic in topics %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ submission.author }}</a>
+              <small class="text-muted">{{ submission.date|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'submissions-detail' submission.id %}">{{ submission.title }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+  <h1>Projects by {{ request.user.username }}</h1>
+    {% for project in projects %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ project.author }}</a>
+              <small class="text-muted">{{ project.date|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'projects-detail' project.id %}">{{ project.title }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}

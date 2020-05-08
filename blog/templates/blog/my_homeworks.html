@@ -1,0 +1,15 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+  <h1>Homeworks by {{ request.user.username }}</h1>
+    {% for homework in homeworks %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ homework.author }}</a>
+              <small class="text-muted">{{ homework.date|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'homeworks-detail' homework.id %}">{{ homework.title }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}

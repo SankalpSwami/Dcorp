@@ -1,0 +1,15 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+  <h1>Class {{ request.user.profile.grade }} - {{ request.user.username }}</h1>
+    {% for profile in profiles %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#"></a>
+              <small class="text-muted">Roll No - {{ profile.rollno }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'users-detail' user.id %}">Name - {{ profile.username }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}

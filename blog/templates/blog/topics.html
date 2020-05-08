@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <h1>Topics for {{ Topics.grade }}</h1>
+    {% for topic in topics %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ topic.author }}</a>
+              <small class="text-muted">{{ topic.date|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'topics-detail' topic.id %}">{{ topic.title }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}

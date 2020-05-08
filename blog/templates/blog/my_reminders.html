@@ -1,0 +1,15 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+  <h1>Reminders by {{ request.user.username }}</h1>
+    {% for reminder in reminders %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ reminder.author }}</a>
+              <small class="text-muted">{{ reminder.date|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'reminders-detail' reminder.id %}">{{ reminder.title }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}
